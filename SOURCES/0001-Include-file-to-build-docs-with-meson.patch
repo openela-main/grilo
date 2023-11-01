@@ -1,0 +1,40 @@
+From a3ba6b49575c74890e38462c41aa27ada74047be Mon Sep 17 00:00:00 2001
+From: Victor Toso <me@victortoso.com>
+Date: Fri, 27 Jul 2018 20:25:44 +0200
+Subject: [PATCH] Include file to build docs with meson
+
+Include missing file from tarball in order to switch to meson
+without missing the docs
+---
+ doc/grilo/grilo.types | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+ create mode 100644 doc/grilo/grilo.types
+
+diff --git a/doc/grilo/grilo.types b/doc/grilo/grilo.types
+new file mode 100644
+index 0000000..ce9358c
+--- /dev/null
++++ b/doc/grilo/grilo.types
+@@ -0,0 +1,19 @@
++% add a _get_type for every GObject whose properties and signals you want
++% documented
++% add the relevant includes to be able to call those _get_type functions
++
++% adding a get_type here will:
++% - change output file name from grilo-(whatever).html to (whatever).html
++% - document properties and signals
++
++#include <grilo.h>
++
++grl_data_get_type
++grl_config_get_type
++grl_related_keys_get_type
++grl_media_get_type
++grl_plugin_get_type
++grl_source_get_type
++grl_registry_get_type
++grl_caps_get_type
++grl_operation_options_get_type
+-- 
+2.17.1
+
